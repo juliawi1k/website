@@ -1,0 +1,75 @@
+<head>
+    
+<meta charset="UTF-8"> 
+<title>Getting Into Worm's Brains</title>
+<link href="https://fonts.googleapis.com/css2?family=Mr+Dafoe" rel="stylesheet">
+<link rel="stylesheet" href="../styles-blog.css">
+
+</head>
+
+<body>
+<div class="top-bar">
+    <div class="links"><a href="https://www.linkedin.com/in/jwilk1/" target="_blank"><img src=/images/linkedin-icon.png style="width:30px;"></a>&nbsp;&nbsp;&nbsp;<a href="https://github.com/jwilk1" target="_blank"><img src=/images/github-icon.png style="width:30px;"></a></div>
+    <a href="https://www.jwilk.dev/" class="logo">J Wilk</a>
+</div>
+<div class="main">
+
+<center>
+<img src="assets/il2vr_title.png">
+<h1>Getting Into Worm's Brains: My Final Year University Project</h1>
+
+<i>Reading time: 7 minutes</i>
+<br><br>
+<div class="toc">
+    <p>~ Read the full report <u><a href="assets/Worm_Final_Report.pdf" target="_blank">here</a></u> ~</p>
+    <p>~ See the code <u><a href="https://github.com/jwilk1/c-elegans-FYP/blob/main/worm_visualisation.ipynb" target="_blank">here</a></u> (Jupyter Notebook/Python) ~</p>
+</div><br><br>***<br></center>
+
+
+<h1 id="what-is-it-">What is it?</h1>
+<p>This is my individual research project on which I worked in my final year at university. In this project, I identified which neurons in brains of worms are responsible for the worms&#39; heat avoidance behaviour. </p>
+<p>Every behaviour in worms and other animals has its root in neurons - some neurons detect outside stimulus (e.g. unpleasant heat), then some neurons perform &quot;computations&quot; on the information passed down from detection neurons, and at the end some neurons stimulate the muscles to move away from the stimulus or to perform other actions in response to it.</p>
+
+<h1 id="why-is-it-interesting-">Why is it interesting?</h1>
+
+<p>If we can understand how neurons cause heat avoidance behaviour works in worms, we can apply similar techniques to understand how other neurons cause other behaviours (e.g. exploration behaviours, aggression, feeding, mating, etc.). If we can find a technique of understanding how neurons cause behaviours in worms, we can apply it to more complex animals - flies, mice, monkeys, and eventually humans.</p>
+<p>Once we understand how neurons lead to a behaviour, we can modify it - we can remove some of the responsible neurons which will stop the behaviour, or we might be able to add new neurons to create additional behaviours. We might be able to build a digital brain assembled from neural circuits responsible for various behaviours.</p>
+
+<h1 id="why-worms-">Why worms?</h1>
+
+<p>A specific type of worm was used for this research: C. elegans. C. elegans are commonly used in neuroscience research, because it&#39;s one of the simplest organisms with a neural system that exhibits many behaviours also seen in humans: learning, ageing, avoidance and attraction behaviour, and more. They only have about 300 neurons, which makes studying connections and causation between these neurons relatively simple.</p>
+
+<img src="assets/c_elegans.jpg" class="image-centre">
+<p class="image-description">C.elegans worm seen under the microscope. Author: Zeynep F. Altun, www.wormatlas.org</p>
+
+<h1 id="how-did-i-do-it-">How did I do it?</h1>
+
+<p>Most research that aims to identify neurons responsible for certain behaviours takes place in a lab setting and uses live animals. Various neurons might be surgically removed from the animals&#39; brains to see whether the studied behaviour (e.g. aggression) can continue without these neurons, or mutated animals that don&#39;t posses these neurons are used.</p>
+<p>In my project, instead of using a lab, I used a publicly available dataset which contained recordings of neural signals of approximately 40 worms. Half of those worms were exposed to an unpleasant heat stimulus at a particular time, and the other half was the control group.</p>
+<p>My aim was to identify which neurons showed a statistically significant difference between the worms that were exposed to the stimulus and the control group. To do this, I used the KS test, which can essentially calculate whether two sets of samples came from the same underlying distribution. </p>
+<p>In my case, for each neuron, the two sets of samples were the recordings of this neuron from the worms exposed to the heat stimulus and the recordings from the worms in the control group. If the KS test calculated them to have likely come from the same distribution, this implied that there was no statistical significance for this neuron, therefore it&#39;s unlikely to be involved in the heat avoidance behaviour. However, if the KS test calculated that they were unlikely to have come from the same distribution, this implied that, for this neuron, there was a statistically significant difference between the worms exposed to heat and the control group, and therefore this neuron might be involved in heat avoidance behaviour.</p>
+<p>There might be some neurons that always show a lot of variability, not only between the heat and control group, but also for individual worms in the same group. My techniques accounted for that.</p>
+
+<img src="assets/avdr_all_measurements.png" class="image-centre">
+
+<p class="image-description">All measurements for AVDR neuron (the neuron that drives backwards movement): worms exposed to the noxious heat stimulus (red), control group worms (blue). X-axis represents time, y-axis represents strength of neural signal. The noxious heat heat stimulus was introduced halfway through the measurements (at 8 minutes mark).</p>
+
+<h1 id="what-were-the-results-">What were the results?</h1>
+
+<p>17 statistically significant neurons were found. Out of these neurons, only 5 have previously been identified as responsible for heat avoidance. My research introduces 12 more neurons potentially involved in the heat avoidance circuit in C. elegans.</p>
+<p>Some of the identified neurons were:</p>
+<div class="list">
+<ul>
+<li>AVDR: neurons that drive backwards movement</li>
+<li>ASHL: sensory neuron that responds to unpleasant stimuli</li>
+<li>FLPR: sensory neuron that senses noxious temperatures</li>
+<li>IL2R: neuron that regulates survival strategy under harsh conditions</li>
+</ul></div>
+<img src="assets/avdr_graph.png" class="image-centre">
+<p class="image-description">Visual example of how the response of AVDR (the neuron that drives backwards movement) differs between the heat and baseline worms. For the full list of identified neurons and all graphs of averages, see the report.</p>
+
+<h1 id="next-steps-">Next steps?</h1>
+
+<p>My research identified 17 neurons that are likely involved in the heat avoidance behaviour, however it has not identified the causal links between them. Furthermore, my method doesn&#39;t distinguish whether the identified neurons are directly involved in this behaviour, or whether they are simply downstream neurons affected by the signals sent from other neurons upstream. As a noxious heat stimulus leads to a wide response in the worms&#39; nervous system, many neurons will be inadvertently affected through other neurons that are more directly involved in the behaviour. </p>
+<p>Future work could attempt to distinguish between direct versus downstream neurons, for example by investigating the delay between the stimulus and the change in neural activity. This might also help determine the causal links between the neurons.</p>
+</body></html>
