@@ -1,0 +1,62 @@
+---
+layout: default
+---
+
+<!-- Mailerlite -->
+<script>
+    (function(w,d,e,u,f,l,n){w[f]=w[f]||function(){(w[f].q=w[f].q||[])
+    .push(arguments);},l=d.createElement(e),l.async=1,l.src=u,
+    n=d.getElementsByTagName(e)[0],n.parentNode.insertBefore(l,n);})
+    (window,document,'script','https://assets.mailerlite.com/js/universal.js','ml');
+    ml('account', '1716542');
+</script>
+<style>
+    .ml-form-align-center {
+        text-align: left !important;
+    }
+    .ml-form-embedBody {
+        padding-left: 0px !important;
+    }
+</style>
+<!-- End Mailerlite -->
+
+ <!-- Goatcounter -->
+  <script data-goatcounter="https://juliawilk.goatcounter.com/count"
+        async src="//gc.zgo.at/count.js"></script>
+<!-- End Goatcounter -->
+</head>
+
+<body>
+<div class="main">
+<h1>> About</h1>
+<p>I'm a Computer Science graduate with work experience in research and cybersecurity. My interests include: Brain-Computer Interfaces (research & applications), reverse engineering, and malware.<br>Contact me: <u>contact(at)juliawilk(dot)com</u>.</p><br><br>
+
+<h1>> Brains</h1>
+    {% for post in site.categories.neuroscience %}
+      <div class="blog-button">
+        {% if post.external_url %}
+          <a href="{{ post.external_url }}" target="_blank" rel="noopener">
+        {% else %}
+          <a href="{{ post.url }}">
+        {% endif %}
+        <div class="blog-button-img-space"><img src="assets/posts/{{ post.categories }}/{{ post.link_title }}/icon.png"></div><div class="blog-button-text"><b><u>{{ post.title }}</u></b> <i>({{post.reading_time}} min)</i>: {{ post.description }}</div></a></div><br>
+    {% endfor %}
+
+<br><br>
+
+<h1>> Malware</h1>
+    {% for post in site.categories.cyber %}
+      <div class="blog-button">
+        <a href="{{ post.url }}" class="blog-button-link">
+        <div class="blog-button-img-space"><img src="assets/posts/{{ post.categories }}/{{ post.link_title }}/icon.png"></div><div class="blog-button-text"><b><u>{{ post.title }}</u></b> <i>({{post.reading_time}} min)</i>: {{ post.description }}</div>
+        </a></div><br>
+    {% endfor %}
+
+<br><br>
+
+<h1>> Mailing List</h1>
+<p>Get an email update when I publish something new.</p>
+<div class="ml-embedded" data-form="GaGxsz"></div>
+
+</div>
+</body>

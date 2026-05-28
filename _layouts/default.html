@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>{{ page.title }}</title>
+
+  <link href="https://fonts.googleapis.com/css2?family=Mr+Dafoe" rel="stylesheet">
+
+  {% if page.layout == "home" %}
+    <link rel="stylesheet" href="/assets/css/home.css">
+  {% elsif page.layout == "post" %}
+    <link rel="stylesheet" href="/assets/css/post.css">
+  {% else %}
+    <link rel="stylesheet" href="/assets/css/home.css">
+  {% endif %}
+</head>
+
+<body>
+
+  <div class="top-bar">
+      <div class="links"><a href="https://www.linkedin.com/in/juliawilk1/" target="_blank"><img src=/assets/linkedin-icon.png style="width:40px;"></a>&nbsp;&nbsp;&nbsp;<a href="https://github.com/juliawi1k" target="_blank"><img src=/assets/github-icon.png style="width:40px;"></a></div>
+      <a href="https://www.juliawilk.com/" class="logo">Julia Wilk</a>
+  </div>
+
+  {{ content }}
+</body>
+</html>

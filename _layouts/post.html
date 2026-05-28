@@ -1,0 +1,21 @@
+---
+layout: default
+---
+
+
+
+
+<div class="main">
+  <center>
+    {% if page.top_quote %}
+      <i>"{{page.top_quote}}"</i><br><br>
+    {% endif %}
+    {% if page.title_image %}
+      <img src="/assets/posts/{{ page.categories }}/{{ page.link_title }}/title_image.png">
+    {% endif %}
+    <div class="blog-title">{{ page.title }}</div>
+    - {{ page.date | date: "%-d %B %Y" }} -<br>
+    <i>Reading time: {{page.reading_time}} minutes</i>
+  </center><br><br>
+  {{ content }}
+</div>

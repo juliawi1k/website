@@ -1,0 +1,10 @@
+title: "Julia Wilk"
+
+url: "https://juliawilk.com"
+baseurl: ""   # always empty when using a root-level custom domain
+
+markdown: kramdown
+kramdown:
+  input: GFM
+
+permalink: /:title/
