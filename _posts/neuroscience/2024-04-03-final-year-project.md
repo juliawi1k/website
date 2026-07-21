@@ -5,6 +5,7 @@ description: "Overview of my final year project in which I've analysed recording
 link_title: final-year-project
 reading_time: 7
 title_image: yes
+layout: post
 ---
 
 <center><br><br><div class="toc">

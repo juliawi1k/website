@@ -3,7 +3,10 @@ layout: default
 ---
 
 
-
+<div class="top-bar">
+    <div class="links"><a href="https://www.linkedin.com/in/juliawilk1/" target="_blank"><img src=/assets/linkedin-icon.png style="width:40px;"></a>&nbsp;&nbsp;&nbsp;<a href="https://github.com/juliawi1k" target="_blank"><img src=/assets/github-icon.png style="width:40px;"></a></div>
+    <a href="https://www.juliawilk.net/" class="logo">Julia Wilk</a>
+</div>
 
 <div class="main">
   <center>
@@ -19,3 +22,113 @@ layout: default
   </center><br><br>
   {{ content }}
 </div>
+
+<div class="contact-and-mailing-container">
+
+<!-- Contact Form -->
+
+<div class="contact-form">
+    <form action='https://forms.zohopublic.eu/contactjuli1/form/ContactUs/formperma/UU39X1qKqgCVqnvgMiguKoBXIycXiUZl0CmxMSOZqgc/htmlRecords/submit' name='form' id='form' method='POST' accept-charset='UTF-8' enctype='multipart/form-data'>
+        <h1>Contact me</h1>
+        <div class="submission-form-inside">
+            <input type="text" maxlength="255" name="Email" value="" fieldType="9" placeholder="Email" id="contact-email" /><br><br>
+            <textarea name="MultiLine" maxlength="65535" placeholder="Message" id="contact-message"></textarea><br><br>
+            
+            <div class="submit-container">
+                <button type="submit-contact">Submit</button>
+            </div>
+        </div>
+    </form>
+</div>
+<br><br>
+
+
+<!-- Mailerlite -->
+
+<div class="mailing-list">
+    <h1>Mailing List</h1>
+    <p>Get an email update when I publish something new.</p>
+    <p>Unsubscribe anytime.</p><br>
+
+    <div class="submission-form-inside" id="ml-form-box">
+        <form id="ml-clean-form" action="https://assets.mailerlite.com/jsonp/1716542/forms/161929843455297244/subscribe" method="POST">
+            
+            <input type="email" name="fields[email]" autocomplete="email" placeholder="Email" required id="contact-email" />
+            <button type="submit-subscribe" id="ml-btn">Subscribe</button>
+            <br><br>
+
+            <div class="checkbox-group">
+                <label class="checkbox-label">
+                    <input type="checkbox" name="groups[]" value="193611250203100526" checked>
+                    <span>Neuroscience</span>
+                </label>
+                
+                <label class="checkbox-label">
+                    <input type="checkbox" name="groups[]" value="193611243113678246" checked>
+                    <span>Cybersecurity</span>
+                </label>
+                
+                <label class="checkbox-label">
+                    <input type="checkbox" name="groups[]" value="193611254137357849" checked>
+                    <span>Writing</span>
+                </label>
+                
+
+                <input type="hidden" name="groups[]" value="161929856451348372">
+            </div>
+
+           
+
+            <input type="hidden" name="ml-submit" value="1">
+            <input type="hidden" name="anticsrf" value="true">
+        </form>
+    </div>
+
+    <div class="submission-form-inside" id="ml-success-box" style="display: none;">
+        <div style="color: #ffffff; text-align: center; padding: 20px;">
+            <h4 style="font-size: 1.3em; margin: 0;">Success</h4>
+            <p style="margin-top: 10px; color: #e0e0e0; font-size: 0.95em; line-height: 1.4;">
+                You will receive email updates for new posts in selected categories.
+            </p>
+        </div>
+    </div>
+
+<script>
+document.getElementById('ml-clean-form').addEventListener('submit', function(event) {
+    event.preventDefault(); 
+    
+    const form = this;
+    const button = document.getElementById('ml-btn');
+    const formBox = document.getElementById('ml-form-box');
+    const successBox = document.getElementById('ml-success-box');
+
+    button.disabled = true;
+    button.innerText = 'Processing...';
+
+    fetch(form.action, {
+        method: 'POST',
+        body: new FormData(form),
+        mode: 'no-cors'
+    })
+    .then(() => {
+        formBox.style.display = 'none';
+        successBox.style.display = 'block';
+    })
+    .catch(() => {
+        button.disabled = false;
+        button.innerText = 'Subscribe';
+        alert('Form submission failed. Please try again.');
+    });
+});
+</script>
+
+</div></div>
+
+<!-- End of MailerLite -->
+
+
+<br><br>
+
+<center><h1 style="color: #edae00">~</h1></center>
+
+<br>

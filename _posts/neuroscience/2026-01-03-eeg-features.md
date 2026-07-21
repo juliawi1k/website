@@ -1,10 +1,14 @@
 ---
 title: "Decoding Brains: 7 EEG Features And What They Tell Us"
 categories: neuroscience
+subcategories: eeg-101
 description: "Deep dive into 7 EEG features: how they’re extracted, what they mean, and their uses in BCI research."
 link_title: eeg-features
 reading_time: 28
 title_image: yes
+layout: post
+home_page_invisible: true
+
 ---
 
 

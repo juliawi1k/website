@@ -1,10 +1,13 @@
 ---
 title: "5 Limitations of EEG"
 categories: neuroscience
+subcategories: eeg-101
 description: "Considering questions such as: Why can't EEG measure exact brain signal? How many neurons need to be active to be detected? What physical field does EEG detect?"
 link_title: eeg-limitations
 reading_time: 6
 title_image: yes
+layout: post
+home_page_invisible: true
 ---
 
 # Limitation #1 - Physical properties
